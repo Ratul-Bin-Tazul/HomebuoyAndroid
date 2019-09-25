@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_white_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_manual"
+        android:icon="@drawable/ic_file_document_box_multiple_outline_white_24dp"
+        android:title="User Manual" />
+
+    <item
+        android:id="@+id/navigation_front_desk"
+        android:icon="@drawable/ic_laptop_mac_white_24dp"
+        android:title="Front Desk" />
+
+    <item
+        android:id="@+id/navigation_shop"
+        android:icon="@drawable/ic_cart_white_24dp"
+        android:title="Shop" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:title="Setting" />
+</menu>
