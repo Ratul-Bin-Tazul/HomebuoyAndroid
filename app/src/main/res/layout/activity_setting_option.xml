@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/setting_option_wifi"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/wifi"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/setting_option_brightness"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/brightness"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/setting_option_reset"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/reset"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/setting_option_checkout"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/checkout"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/setting_option_save_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="APPLY &amp; SAVE"
+        android:layout_marginTop="40dp"
+        android:textColor="#fff"
+        android:backgroundTint="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="powered by HOMEBUOY"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"/>
+
+</RelativeLayout>

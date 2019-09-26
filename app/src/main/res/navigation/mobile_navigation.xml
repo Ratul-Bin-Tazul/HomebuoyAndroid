@@ -13,8 +13,8 @@
 
     <fragment
         android:id="@+id/navigation_manual"
-        android:name="com.ratulbintazul.homebuoyandroid.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:name="com.ratulbintazul.homebuoyandroid.ui.usermanual.userManualFragment"
+        android:label="User Manual"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/navigation_setting"
-        android:name="com.ratulbintazul.homebuoyandroid.ui.notifications.NotificationsFragment"
+        android:name="com.ratulbintazul.homebuoyandroid.ui.setting.SettingAuthFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

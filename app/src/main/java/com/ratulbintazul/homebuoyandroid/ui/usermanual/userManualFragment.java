@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import com.ratulbintazul.homebuoyandroid.R;
 
@@ -25,7 +27,14 @@ public class userManualFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.user_manual_fragment, container, false);
+        View view = inflater.inflate(R.layout.user_manual_fragment, container, false);
+
+        WebView mWebView = (WebView) view.findViewById(R.id.user_manual_webview);
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        mWebView.loadUrl("http://beta.html5test.com/");
+
+        return view;
     }
 
     @Override

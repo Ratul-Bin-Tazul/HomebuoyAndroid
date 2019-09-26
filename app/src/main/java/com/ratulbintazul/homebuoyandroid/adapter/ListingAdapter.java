@@ -1,10 +1,12 @@
 package com.ratulbintazul.homebuoyandroid.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -24,7 +26,9 @@ import com.google.android.exoplayer2.ui.PlayerControlView;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.ratulbintazul.homebuoyandroid.R;
+import com.ratulbintazul.homebuoyandroid.WebViewActivity;
 import com.ratulbintazul.homebuoyandroid.model.Listing;
+import com.ratulbintazul.homebuoyandroid.utils.ChangeFragmentInterface;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -37,10 +41,13 @@ public class ListingAdapter extends CardSliderAdapter<Listing> {
     private SimpleExoPlayer player;
     private PlayerView playerView;
 
+    ChangeFragmentInterface changeFragmentInterface;
+
     public ListingAdapter(ArrayList<Listing> listings, Context context){
         super(listings);
         this.listings = listings;
         this.context = context;
+        changeFragmentInterface = (ChangeFragmentInterface) context;
     }
 
     private void initializePlayer(String url) {
@@ -79,28 +86,20 @@ public class ListingAdapter extends CardSliderAdapter<Listing> {
             playerView = itemContentView.findViewById(R.id.video_view);
 
             initializePlayer(item.getMEDIAURL());
-
-//            MediaController mediacontroller = new MediaController(context);
-//            mediacontroller.setAnchorView(vv);
-//            String uriPath = "https://github.com/MarcinMoskala/VideoPlayView/raw/master/videos/cat1.mp4"; //update package name
-//            Uri uri = Uri.parse(item.getMEDIAURL());
-//
-//            vv.setMediaController(mediacontroller);
-//            vv.setVideoURI(uri);
-//            vv.requestFocus();
-//            vv.start();
-//
-//            vv.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//                @Override
-//                public void onCompletion(MediaPlayer mp) {
-//                    vv.setMediaController(mediacontroller);
-//                    vv.setVideoURI(uri);
-//                    vv.requestFocus();
-//                    vv.start();
-//                }
-//            });
         }
 
+        itemContentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (item.getTYPE().equals("Platform B")) {
+                    Intent i = new Intent(context, WebViewActivity.class);
+                    i.putExtra("url",item.getURL());
+                    context.startActivity(i);
+                }else if (item.getTYPE().equals("Platform C")) {
+                    changeFragmentInterface.changeFragment();
+                }
+            }
+        });
 
     }
 
